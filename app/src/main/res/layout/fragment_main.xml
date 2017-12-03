@@ -42,7 +42,6 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 android:text="USD TO THB"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/h2"
