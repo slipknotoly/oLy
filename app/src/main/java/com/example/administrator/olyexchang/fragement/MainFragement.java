@@ -7,6 +7,10 @@ import android.support.v4.app.Fragment;//.support.v4.app.Fragment จะต้�
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.administrator.olyexchang.R;
 
@@ -17,6 +21,40 @@ import com.example.administrator.olyexchang.R;
 
 public class MainFragement extends Fragment{
 
+    //    Explicit หรือการประกาศตัวแปร
+    private RadioGroup radioGroup;
+    private RadioButton usdRadioButton, thbRadioButton;
+    private EditText editText;
+    private Button button;
+
+    //    สร้างเมทอดหลัก ที่ใช้ในการจัดการ การทำงาน
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initialView();
+
+
+    }// Main Method
+
+    private void initialView() {
+        //        Initial View
+        radioGroup = getView().findViewById(R.id.ragMoney);
+        thbRadioButton = getView().findViewById(R.id.radTHB);
+        usdRadioButton = getView().findViewById(R.id.radUSD);
+        editText = getView().findViewById(R.id.edtMoney);
+        button = getView().findViewById(R.id.btnExchange);
+
+//        Click USD to THB First
+        clickUSDToTHBFirst();
+
+
+    }
+
+    private void clickUSDToTHBFirst() {
+        usdRadioButton.setChecked(true);
+    }
+
+    //    สร้างหน้ากาก Fragement
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater,
